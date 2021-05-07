@@ -116,10 +116,10 @@ public class calculate : MonoBehaviour
     }
     private void OutputResults(double MedicareLevyPaid, double IncomeTaxPaid, double NetIncome, double grossYearlySalary)
     {
-        MedicareOutput.text = "Medicare levy paid: $" + MedicareLevyPaid.ToString("F2");
-        NetIncomeOutput.text = "Net income paid: $" + NetIncome.ToString("F2");
-        GrossYearlySalaryOutput.text = "Gross salary paid: $" + grossYearlySalary.ToString("F2");
-        IncomeTaxPaidOutput.text = "Income tax paid: $" + IncomeTaxPaid.ToString("F2");
+        MedicareOutput.text = "$" + MedicareLevyPaid.ToString("F2");
+        NetIncomeOutput.text = "$" + NetIncome.ToString("F2");
+        GrossYearlySalaryOutput.text = "$" + grossYearlySalary.ToString("F2");
+        IncomeTaxPaidOutput.text = "$" + IncomeTaxPaid.ToString("F2");
 
     }
 
