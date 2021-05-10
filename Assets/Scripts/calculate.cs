@@ -36,8 +36,9 @@ public class calculate : MonoBehaviour
    
     private double GetGrossSalary()
     {
-        double GrossSalary = double.Parse(GrossSalaryInput.text);
-        return GrossSalary;
+        
+            double GrossSalary = double.Parse(GrossSalaryInput.text);
+            return GrossSalary;     
     }
     private string GetSalaryPayPeriod()
     {
@@ -81,6 +82,7 @@ public class calculate : MonoBehaviour
 
     private double CalculateIncomeTax(double grossYearlySalary)
     {
+        
         if (grossYearlySalary > 0 && grossYearlySalary < 18200)
         {
             return 0;
@@ -116,10 +118,21 @@ public class calculate : MonoBehaviour
     }
     private void OutputResults(double MedicareLevyPaid, double IncomeTaxPaid, double NetIncome, double grossYearlySalary)
     {
-        MedicareOutput.text = "$" + MedicareLevyPaid.ToString("F2");
-        NetIncomeOutput.text = "$" + NetIncome.ToString("F2");
-        GrossYearlySalaryOutput.text = "$" + grossYearlySalary.ToString("F2");
-        IncomeTaxPaidOutput.text = "$" + IncomeTaxPaid.ToString("F2");
+        if (MedicareLevyPaid > 0 && IncomeTaxPaid > 0 && NetIncome > 0 && grossYearlySalary > 0)
+        {
+            MedicareOutput.text = "$" + MedicareLevyPaid.ToString("F2");
+            NetIncomeOutput.text = "$" + NetIncome.ToString("F2");
+            GrossYearlySalaryOutput.text = "$" + grossYearlySalary.ToString("F2");
+            IncomeTaxPaidOutput.text = "$" + IncomeTaxPaid.ToString("F2");
+        }
+        else
+        {
+            MedicareOutput.text = "$" + "0";
+            NetIncomeOutput.text = "$" + "0";
+            GrossYearlySalaryOutput.text = "$" + "0";
+            IncomeTaxPaidOutput.text = "$" + "0";
+        }
+        
 
     }
 
